@@ -1,0 +1,70 @@
+/* Los estilos aplicados se detallan a continuación */
+
+body {
+    background-color: #FFFF99;
+}
+
+span {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    font-weight: 100;
+    text-transform: capitalize;
+    color: #0000FF;
+}
+
+table {
+    background-color: #CC99FF; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div {
+    width: 100%;
+    text-align: center;
+}
+
+select {
+    font-family: Perpetua;
+    font-size: x-large;
+    color: #FF0066;
+    background-color: #6699FF;
+    width: 90%;
+}
+
+hr {
+    border: thin ;
+    border-color: #990099;
+    border-style: solid;
+}
+
+.titulo {
+    color: #008080;
+    text-decoration: blink;
+}
+
+.boton {
+    font-family: Adobe Gothic Std B;
+    font-size: large;
+    color: #009900;
+    background-color: #66FFCC;
+    border-color: #808000;
+}
+
+.texto {
+    font-family: 'Times New Roman', Times, serif;
+    color: #6600CC;
+    background-color: #CCCCFF;
+}
+
+.radio {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.aceptar {
+    text-align: right;
+} 
+
+.limpiar {
+    text-align: left;
+} 

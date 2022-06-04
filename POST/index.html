@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Entradas-Tek</title>
+</head>
+<body>
+ 
+<form name="tktek" action="ConfirmacionPOST.asp" method="POST">
+<div>
+<table>
+<thead>
+    <tr>
+        <th colspan="4"><span class="titulo">Entradas-Tek</span></th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td colspan="4"><hr/></td>
+    </tr>
+<tr>
+    <td><span>Seleccione encuentro</span></td>
+    <td><select name="select_event" id="select_event">
+        <option value="1">Barcelona - Ath. Bilbao</option>
+        <option value="2">Real Madrid - Sp. Gijón</option>
+        <option value="3">Dep. La Coruña - Sevilla</option>
+    </select></td>
+    <td><span>Ubicaci&oacute;n</span></td>
+    <td><select name="select_location" id="select_location">
+        <option value="PL">Popular Local</option>
+        <option value="PV">Popular Visitante</option>
+        <option value="PLL">Platea Local</option>
+        <option value="PLV">Platea Visitante</option>
+    </select></td>
+</tr>
+<tr>
+    <td><span>Cantidad de entradas</span></td>
+    <td><input type="number" min="0" id="numTK" name="numTK" class="texto"></td>
+    <td><span>Precio u$s</span></td>
+    <td><input type="text" value="35" size="25" id="value" name="value" class="texto"></td>
+</tr>
+<tr>
+    <td colspan="4"><hr/></td>
+</tr>
+<tr>
+    <th colspan="4"><span class="titulo">Informaci&oacute;n de pago</span></th>
+</tr>
+<tr>
+    <td colspan="4"><hr/></td>
+</tr>
+<tr>
+    <td><span>Apellido</span></td>
+    <td><input type="text" size="25" id="lastname" name="lastname" class="texto"></td>
+    <td><span>Nombre</span></td>
+    <td><input type="text" size="25" id="firstname" name="firstname" class="texto"></td>
+</tr>
+<tr>
+    <td><span>E-mail</span></td>
+    <td><input type="email" size="25" id="email" name="email" class="texto"></td>
+    <td><span>Confirme el E-mail</span></td>
+    <td><input type="email" size="25" class="texto"></td>
+</tr>
+<tr>
+    <td colspan="4"><hr/></td>
+</tr>
+<tr>
+    <th colspan="4" ><span class="titulo">Seleccione Tarjeta de Cr&eacute;dito</span></th>
+</tr>
+<tr>
+    <td colspan="4"><hr/></td>
+</tr>
+<tr>
+    <td colspan="4" >
+        <img src="../img/visa.png" alt="visa" height="60">
+        <img src="../img/master.png" alt="mastercard" height="60">
+        <img src="../img/amex.png" alt="american express" height="60">
+    </td>
+</tr>
+<tr>
+    <td colspan="4" >
+        <input type="radio" name="ccard" value="visa" class="radio">
+        <input type="radio" name="ccard" value="master" class="radio">
+        <input type="radio" name="ccard" value="amex" class="radio">
+    </td>
+</tr>
+<tr>
+    <td colspan="4"><hr/></td>
+</tr>
+</tbody>
+<tfoot>
+    <tr>
+        <td></td>
+        <td class="limpiar"><input type="reset" value="Limpiar" class="boton"></td>
+        <td class="aceptar"><input type="submit" value="Aceptar" class="boton"></td>
+        <td></td>
+    </tr>
+</tfoot>
+</table>
+</div>
+</form>
+
+</body>
+</html>
