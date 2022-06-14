@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/validacion.js"></script>
     <title>Entradas-Tek</title>
 </head>
 <body>
  
-<form name="tktek" action="ConfirmacionPOST.asp" method="POST">
+<form name="tktek" action="ConfirmacionGET.asp" method="GET">
 <div>
 <table>
 <thead>
@@ -23,14 +24,14 @@
     </tr>
 <tr>
     <td><span>Seleccione encuentro</span></td>
-    <td><select name="select_event" id="select_event">
-        <option value="1">Barcelona - Ath. Bilbao</option>
+    <td><select name="select_event" id="select_event" onchange="calculatePrice()">
+        <option value="1" selected>Barcelona - Ath. Bilbao</option>
         <option value="2">Real Madrid - Sp. Gijón</option>
         <option value="3">Dep. La Coruña - Sevilla</option>
     </select></td>
     <td><span>Ubicaci&oacute;n</span></td>
-    <td><select name="select_location" id="select_location">
-        <option value="PL">Popular Local</option>
+    <td><select name="select_location" id="select_location" onchange="calculatePrice()">
+        <option value="PL" selected>Popular Local</option>
         <option value="PV">Popular Visitante</option>
         <option value="PLL">Platea Local</option>
         <option value="PLV">Platea Visitante</option>
@@ -38,9 +39,9 @@
 </tr>
 <tr>
     <td><span>Cantidad de entradas</span></td>
-    <td><input type="number" min="0" id="numTK" name="numTK" class="texto"></td>
+    <td><input type="number" value="1" min="1" max="20" id="numTK" name="numTK" class="texto" onchange="calculatePrice()"></td>
     <td><span>Precio u$s</span></td>
-    <td><input type="text" value="35" size="25" id="value" name="value" class="texto"></td>
+    <td><input type="number" value=200 size="25" id="value" name="value" class="texto" readonly></td>
 </tr>
 <tr>
     <td colspan="4"><hr/></td>
@@ -53,15 +54,15 @@
 </tr>
 <tr>
     <td><span>Apellido</span></td>
-    <td><input type="text" size="25" id="lastname" name="lastname" class="texto"></td>
+    <td><input type="text" size="25" id="lastname" name="lastname" class="texto" onblur="validateHasData(this, 'apellido')"></td>
     <td><span>Nombre</span></td>
-    <td><input type="text" size="25" id="firstname" name="firstname" class="texto"></td>
+    <td><input type="text" size="25" id="firstname" name="firstname" class="texto" onblur="validateHasData(this, 'nombre')"></td>
 </tr>
 <tr>
     <td><span>E-mail</span></td>
-    <td><input type="email" size="25" id="email" name="email" class="texto"></td>
+    <td><input type="email" size="25" id="email" name="email" class="texto" onblur="validateHasData(this, 'e-mail')"></td>
     <td><span>Confirme el E-mail</span></td>
-    <td><input type="email" size="25" class="texto"></td>
+    <td><input type="email" size="25" id="emailConf" class="texto" onblur="validateHasData(this, 'confirmacion e-mail')"></td>
 </tr>
 <tr>
     <td colspan="4"><hr/></td>
@@ -74,9 +75,9 @@
 </tr>
 <tr>
     <td colspan="4" >
-        <img src="../img/visa.png" alt="visa" height="60">
-        <img src="../img/master.png" alt="mastercard" height="60">
-        <img src="../img/amex.png" alt="american express" height="60">
+        <img src="../img/visa.png" alt="visa" height="60" onclick="alertPromos()">
+        <img src="../img/master.png" alt="mastercard" height="60" onclick="alertPromos()">
+        <img src="../img/amex.png" alt="american express" height="60" onclick="alertPromos()">
     </td>
 </tr>
 <tr>
@@ -94,7 +95,7 @@
     <tr>
         <td></td>
         <td class="limpiar"><input type="reset" value="Limpiar" class="boton"></td>
-        <td class="aceptar"><input type="submit" value="Aceptar" class="boton"></td>
+        <td class="aceptar"><input type="submit" value="Aceptar" class="boton" onclick="return validateForm()"></td>
         <td></td>
     </tr>
 </tfoot>
